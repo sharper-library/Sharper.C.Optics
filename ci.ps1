@@ -12,27 +12,39 @@ function TestProjects() {
     AllProjects | Where {$_.Directory.Name -match $TestsRegex}
 }
 
+function GlobalSdk($path) {
+    (ConvertFrom-Json ((Get-Content $path) -join "`n")).sdk
+}
+
 function CleanCmd() {
     AllProjects | %{$_.Directory} | %{
         if (Test-Path $_/bin) {Remove-Item -Recurse $_/bin}
         if (Test-Path $_/obj) {Remove-Item -Recurse $_/obj}
     }
+    if (Test-Path artifacts) {Remove-Item -Recurse artifacts}
 }
 
-function RestoreCmd() {
-    dnu restore
+function EnsureDnvm() {
+    $sdk = GlobalSdk 'global.json'
+    dnvm install -Alias ci_build $sdk.version -r $sdk.runtime -arch $sdk.architecture
 }
 
 function InstallCmd() {
-    # nuget sources add -Name Sharper.C -Source $env:SHARPER_C_FEED
-    dnvm install latest
-    dnu restore
+    dnvm exec ci_build dnu restore
 }
 
 function BuildCmd() {
-    $env:DNX_BUILD_VERSION = 'z'
-    #    'build-{0}' -f ($env:APPVEYOR_BUILD_NUMBER.PadLeft(5, '0'))
-    dnu pack --configuration Release (PackageProjects)
+    Write-Host "Building projects:"
+    PackageProjects | %{Write-Host "   $_"}
+    if ($env:BUILD_BUILDNUMBER) {
+      $env:DNX_BUILD_VERSION = $env:BUILD_BUILDNUMBER
+    }
+    else {
+      $env:DNX_BUILD_VERSION = 'z'
+    }
+    PackageProjects | %{
+      dnvm exec ci_build dnu pack --configuration Release $_.Directory
+    }
 }
 
 function TestCmd() {
@@ -42,13 +54,15 @@ function TestCmd() {
 }
 
 function RegisterCmd() {
-    Get-ChildItem -Recurse *.nupkg | %{dnu packages add $_}
+    PackageProjects | %{
+        Get-ChildItem -Recurse *.nupkg | %{dnvm exec ci_build dnu packages add $_}
+    }
 }
 
 function RunCommand($name) {
+    EnsureDnvm
     switch ($name) {
         clean {CleanCmd}
-        restore {RestoreCmd}
         install {InstallCmd}
         build {BuildCmd}
         test {TestCmd}
