@@ -1,0 +1,586 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "FsCheck/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "3.1.2.5"
+        },
+        "compile": {
+          "lib/net45/FsCheck.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FsCheck.dll": {}
+        }
+      },
+      "FSharp.Core/4.0.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FSharp.Core.dll": {}
+        }
+      },
+      "Sharper.C.Eq/0.1.0-master-00003": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        }
+      },
+      "Sharper.C.Maybe/0.1.0-master-00005": {
+        "type": "package",
+        "dependencies": {
+          "Sharper.C.Eq": "0.1.0-master-00003"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Linq"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Optics/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master",
+          "Sharper.C.Sum": "0.1.0-master",
+          "Sharper.C.Unit": "0.1.0"
+        }
+      },
+      "Sharper.C.Optics.Testing/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Optics": null,
+          "Sharper.C.Testing": "0.1.0"
+        }
+      },
+      "Sharper.C.Sum/0.1.0-master-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.2.0-rc2-24027"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        }
+      },
+      "Sharper.C.Testing/0.1.0-master-00007": {
+        "type": "package",
+        "dependencies": {
+          "FsCheck": "2.4.0",
+          "FSharp.Core": "4.0.0.1",
+          "Sharper.C.Eq": "0.1.0-master-00003",
+          "System.Collections.Immutable": "1.1.38-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        }
+      },
+      "Sharper.C.Unit/0.1.0-build-00004": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.2.0-rc2-24027": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "FsCheck/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "3.1.2.5"
+        },
+        "compile": {
+          "lib/net45/FsCheck.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FsCheck.dll": {}
+        }
+      },
+      "FSharp.Core/4.0.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FSharp.Core.dll": {}
+        }
+      },
+      "Sharper.C.Eq/0.1.0-master-00003": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        }
+      },
+      "Sharper.C.Maybe/0.1.0-master-00005": {
+        "type": "package",
+        "dependencies": {
+          "Sharper.C.Eq": "0.1.0-master-00003"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Linq"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Optics/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master",
+          "Sharper.C.Sum": "0.1.0-master",
+          "Sharper.C.Unit": "0.1.0"
+        }
+      },
+      "Sharper.C.Optics.Testing/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Optics": null,
+          "Sharper.C.Testing": "0.1.0"
+        }
+      },
+      "Sharper.C.Sum/0.1.0-master-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.2.0-rc2-24027"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        }
+      },
+      "Sharper.C.Testing/0.1.0-master-00007": {
+        "type": "package",
+        "dependencies": {
+          "FsCheck": "2.4.0",
+          "FSharp.Core": "4.0.0.1",
+          "Sharper.C.Eq": "0.1.0-master-00003",
+          "System.Collections.Immutable": "1.1.38-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        }
+      },
+      "Sharper.C.Unit/0.1.0-build-00004": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.2.0-rc2-24027": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "FsCheck/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "3.1.2.5"
+        },
+        "compile": {
+          "lib/net45/FsCheck.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FsCheck.dll": {}
+        }
+      },
+      "FSharp.Core/4.0.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FSharp.Core.dll": {}
+        }
+      },
+      "Sharper.C.Eq/0.1.0-master-00003": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Eq.dll": {}
+        }
+      },
+      "Sharper.C.Maybe/0.1.0-master-00005": {
+        "type": "package",
+        "dependencies": {
+          "Sharper.C.Eq": "0.1.0-master-00003"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Linq"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Optics/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master",
+          "Sharper.C.Sum": "0.1.0-master",
+          "Sharper.C.Unit": "0.1.0"
+        }
+      },
+      "Sharper.C.Optics.Testing/0.1.0-z": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Sharper.C.Optics": null,
+          "Sharper.C.Testing": "0.1.0"
+        }
+      },
+      "Sharper.C.Sum/0.1.0-master-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.2.0-rc2-24027"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Sum.dll": {}
+        }
+      },
+      "Sharper.C.Testing/0.1.0-master-00007": {
+        "type": "package",
+        "dependencies": {
+          "FsCheck": "2.4.0",
+          "FSharp.Core": "4.0.0.1",
+          "Sharper.C.Eq": "0.1.0-master-00003",
+          "System.Collections.Immutable": "1.1.38-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Runtime"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Testing.dll": {}
+        }
+      },
+      "Sharper.C.Unit/0.1.0-build-00004": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Unit.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.2.0-rc2-24027": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sharper.C.Optics/0.1.0-z": {
+      "type": "project",
+      "path": "../Sharper.C.Optics/project.json"
+    },
+    "Sharper.C.Optics.Testing/0.1.0-z": {
+      "type": "project",
+      "path": "../Sharper.C.Optics.Testing/project.json"
+    },
+    "FsCheck/2.4.0": {
+      "type": "package",
+      "sha512": "iNljIeubjyG0ZsUm2++RJkOSm/6Be8zr4lk7ZvAMsoS31I6wphN2WTtolY8754ktwjhX1g9qMAvc7GQmyw0HFQ==",
+      "files": [
+        "FsCheck.2.4.0.nupkg",
+        "FsCheck.2.4.0.nupkg.sha512",
+        "FsCheck.nuspec",
+        "lib/net45/FsCheck.dll",
+        "lib/net45/FsCheck.pdb",
+        "lib/net45/FsCheck.xml",
+        "lib/portable-net45+netcore45/FsCheck.dll",
+        "lib/portable-net45+netcore45/FsCheck.pdb",
+        "lib/portable-net45+netcore45/FsCheck.XML",
+        "lib/portable-net45+netcore45+wp8/FsCheck.dll",
+        "lib/portable-net45+netcore45+wp8/FsCheck.pdb",
+        "lib/portable-net45+netcore45+wp8/FsCheck.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8/FsCheck.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/FsCheck.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8/FsCheck.XML"
+      ]
+    },
+    "FSharp.Core/4.0.0.1": {
+      "type": "package",
+      "sha512": "lNtlbbJ5hP8LEd7nKtTUiGEpLmHLWiU39x+0jq4rmRWG7Mgj6vYm+gmTOhtwpiPFX8j8zUsfLyA8AC7dZY75LQ==",
+      "files": [
+        "FSharp.Core.4.0.0.1.nupkg",
+        "FSharp.Core.4.0.0.1.nupkg.sha512",
+        "FSharp.Core.nuspec",
+        "lib/net20/FSharp.Core.dll",
+        "lib/net20/FSharp.Core.optdata",
+        "lib/net20/FSharp.Core.sigdata",
+        "lib/net20/FSharp.Core.xml",
+        "lib/net40/FSharp.Core.dll",
+        "lib/net40/FSharp.Core.optdata",
+        "lib/net40/FSharp.Core.sigdata",
+        "lib/net40/FSharp.Core.xml",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.dll",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.optdata",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.sigdata",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.xml",
+        "lib/portable-net45+netcore45/FSharp.Core.dll",
+        "lib/portable-net45+netcore45/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45/FSharp.Core.xml",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.dll",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.xml",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.xml",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.dll",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.optdata",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.sigdata",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.xml"
+      ]
+    },
+    "Sharper.C.Eq/0.1.0-master-00003": {
+      "type": "package",
+      "sha512": "Ja3KREUpubhzQuo7sslLif3YNmZF325GNHVtmpldnqxAImKn0iUZoF1mfvYjZw+nXMX33xfZ/KuXM39S5Js+Hw==",
+      "files": [
+        "lib/dnx451/Sharper.C.Eq.dll",
+        "lib/dnx451/Sharper.C.Eq.xml",
+        "lib/dotnet/Sharper.C.Eq.dll",
+        "lib/dotnet/Sharper.C.Eq.xml",
+        "lib/net451/Sharper.C.Eq.dll",
+        "lib/net451/Sharper.C.Eq.xml",
+        "Sharper.C.Eq.0.1.0-master-00003.nupkg",
+        "Sharper.C.Eq.0.1.0-master-00003.nupkg.sha512",
+        "Sharper.C.Eq.nuspec"
+      ]
+    },
+    "Sharper.C.Maybe/0.1.0-master-00005": {
+      "type": "package",
+      "sha512": "PcniLU7Gs88+JgFRNajUWUUPm/oLe++hexab7mCgAwUfpjCIf00KahZMgSou2P2REolsGzDTSiJUrjAHFEhKrw==",
+      "files": [
+        "lib/dnx451/Sharper.C.Maybe.dll",
+        "lib/dnx451/Sharper.C.Maybe.xml",
+        "lib/dotnet/Sharper.C.Maybe.dll",
+        "lib/dotnet/Sharper.C.Maybe.xml",
+        "lib/net451/Sharper.C.Maybe.dll",
+        "lib/net451/Sharper.C.Maybe.xml",
+        "Sharper.C.Maybe.0.1.0-master-00005.nupkg",
+        "Sharper.C.Maybe.0.1.0-master-00005.nupkg.sha512",
+        "Sharper.C.Maybe.nuspec"
+      ]
+    },
+    "Sharper.C.Sum/0.1.0-master-00002": {
+      "type": "package",
+      "sha512": "LIj24K/VTSgtSiRf+g6ng+U3fiQ0QYyWbtQ1iNtfUgSzfESRSWpXwXbtAtadrt5G3yJcsxli8A72RrCzEJvsBg==",
+      "files": [
+        "lib/dnx451/Sharper.C.Sum.dll",
+        "lib/dnx451/Sharper.C.Sum.xml",
+        "lib/dotnet/Sharper.C.Sum.dll",
+        "lib/dotnet/Sharper.C.Sum.xml",
+        "lib/net451/Sharper.C.Sum.dll",
+        "lib/net451/Sharper.C.Sum.xml",
+        "Sharper.C.Sum.0.1.0-master-00002.nupkg",
+        "Sharper.C.Sum.0.1.0-master-00002.nupkg.sha512",
+        "Sharper.C.Sum.nuspec"
+      ]
+    },
+    "Sharper.C.Testing/0.1.0-master-00007": {
+      "type": "package",
+      "sha512": "XXYvw0tI1b4FLWELsi1GlbMtW5WkY1PPyMU9krz6n3EuCmITSX8j71ZxwQPhDSXyOseNfKzWBO7kEK3ye5ey9w==",
+      "files": [
+        "lib/dnx451/Sharper.C.Testing.dll",
+        "lib/dnx451/Sharper.C.Testing.xml",
+        "Sharper.C.Testing.0.1.0-master-00007.nupkg",
+        "Sharper.C.Testing.0.1.0-master-00007.nupkg.sha512",
+        "Sharper.C.Testing.nuspec"
+      ]
+    },
+    "Sharper.C.Unit/0.1.0-build-00004": {
+      "type": "package",
+      "sha512": "0GVcJVe6Ml/HiDs6H9EW4qJ2CHmxkWKZpM84ZtP/4f7sCJQLCxQJzal+moQcszIUaHxjWC7TTcsdzDDcjPaPVw==",
+      "files": [
+        "lib/dnx451/Sharper.C.Unit.dll",
+        "lib/dnx451/Sharper.C.Unit.xml",
+        "lib/dotnet/Sharper.C.Unit.dll",
+        "lib/dotnet/Sharper.C.Unit.xml",
+        "lib/net451/Sharper.C.Unit.dll",
+        "lib/net451/Sharper.C.Unit.xml",
+        "Sharper.C.Unit.0.1.0-build-00004.nupkg",
+        "Sharper.C.Unit.0.1.0-build-00004.nupkg.sha512",
+        "Sharper.C.Unit.nuspec"
+      ]
+    },
+    "System.Collections.Immutable/1.2.0-rc2-24027": {
+      "type": "package",
+      "sha512": "bn4jDP6DOvUHTlpUVa4ehecoz+V4YL4gdL6yOXdruc/3XHRVL2j/ZIggusM8f90uUSQhg7bgvBuLmQCGG3cZtg==",
+      "files": [
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Collections.Immutable.dll",
+        "lib/netstandard1.0/System.Collections.Immutable.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
+        "System.Collections.Immutable.1.2.0-rc2-24027.nupkg",
+        "System.Collections.Immutable.1.2.0-rc2-24027.nupkg.sha512",
+        "System.Collections.Immutable.nuspec",
+        "ThirdPartyNotices.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Sharper.C.Optics.Testing "
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}
