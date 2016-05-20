@@ -106,16 +106,30 @@ namespace Sharper.C.Control.Optics
         public static Prism<S, T, A, B> Mk<S, T, A, B>
         ( Func<S, Or<T, A>> get
         , Func<B, T> review
-        , Func<Func<A, B>, Func<S, T>> update
+        , Func<Func<A, B>, Func<S, T>> update = null
         )
-        =>  new APrism<S, T, A, B>(get, review, update);
+        =>  new APrism<S, T, A, B>
+            ( get
+            , review
+            , update ?? DefaultUpdate(get, review)
+            );
 
         public static Prism<S, A> Mk_<S, A>
         ( Func<S, Or<S, A>> get
         , Func<A, S> review
-        , Func<Func<A, A>, Func<S, S>> update
+        , Func<Func<A, A>, Func<S, S>> update = null
         )
-        =>  new APrism<S, A>(get, review, update);
+        =>  new APrism<S, A>
+            ( get
+            , review
+            , update ?? DefaultUpdate(get, review)
+            );
+
+        private static Func<Func<A, B>, Func<S, T>> DefaultUpdate<S, T, A, B>
+          ( Func<S, Or<T, A>> get
+          , Func<B, T> review
+          )
+        => f => s => get(s).LeftValueOr(a => review(f(a)));
 
         private struct APrism<S, T, A, B>
           : Prism<S, T, A, B>
