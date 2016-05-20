@@ -1,4 +1,5 @@
-﻿using Sharper.C.Data;
+﻿using System;
+using Sharper.C.Data;
 using static Sharper.C.Data.UnitModule;
 
 namespace Sharper.C.Control.Optics
@@ -55,15 +56,15 @@ namespace Sharper.C.Control.Optics
             , f => eax => eax.Map(f)
             );
 
-        public static Iso<Maybe<A>, Maybe<B>, Or<Unit, A>, Or<Unit, B>>
-        IsoMaybeSum<A, B>()
-        =>  Iso.Mk<Maybe<A>, Maybe<B>, Or<Unit, A>, Or<Unit, B>>
-            ( ma => ma.Cata(() => Or.Left<Unit, A>(UNIT), Or.Right<Unit, A>)
+        public static Iso<Maybe<A>, Maybe<B>, Or<E, A>, Or<E, B>>
+        IsoMaybeSum<A, B, E>(Func<E> e)
+        =>  Iso.Mk<Maybe<A>, Maybe<B>, Or<E, A>, Or<E, B>>
+            ( ma => ma.Cata(() => Or.Left<E, A>(e()), Or.Right<E, A>)
             , eb => eb.Cata(_ => Maybe.Nothing<B>(), Maybe.Just)
             );
 
-        public static Iso<Or<Unit, A>, Or<Unit, B>, Maybe<A>, Maybe<B>>
-        IsoSumMaybe<A, B>()
-        =>  IsoMaybeSum<B, A>().From;
+        public static Iso<Or<E, A>, Or<E, B>, Maybe<A>, Maybe<B>>
+        IsoSumMaybe<A, B, E>(Func<E> e)
+        =>  IsoMaybeSum<B, A, E>(e).From;
     }
 }
