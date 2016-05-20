@@ -19,7 +19,7 @@ namespace Sharper.C.Control.Optics
     public static class Prism
     {
         public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
-          ( Prism<S, T, A, B> p0
+          ( this Prism<S, T, A, B> p0
           , Prism<A, B, X, Y> p1
           )
         =>  new APrism<S, T, X, Y>
@@ -35,7 +35,7 @@ namespace Sharper.C.Control.Optics
               );
 
         public static Prism<S, X> Then<S, A, X>
-          ( Prism<S, A> p0
+          ( this Prism<S, A> p0
           , Prism<A, X> p1
           )
         =>  new APrism<S, X>
@@ -51,10 +51,30 @@ namespace Sharper.C.Control.Optics
               );
 
         public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
-          ( Iso<S, T, A, B> i
+          ( this Prism<S, T, A, B> p
+          , Iso<A, B, X, Y> i
+          )
+        =>  Mk<S, T, X, Y>
+            ( s => p.Get(s).Map(i.There)
+            , y => p.Re.View(i.Back(y))
+            , xy => p.Update(a => i.Back(xy(i.There(a))))
+            );
+
+        public static Prism<S, X> Then<S, A, X>
+          ( this Prism<S, A> p
+          , Iso<A, X> i
+          )
+        =>  Mk<S, X>
+            ( s => p.Get(s).Map(i.There)
+            , y => p.Re.View(i.Back(y))
+            , xy => p.Update(a => i.Back(xy(i.There(a))))
+            );
+
+        public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
+          ( this Iso<S, T, A, B> i
           , Prism<A, B, X, Y> p
           )
-        =>  Prism.Mk<S, T, X, Y>
+        =>  Mk<S, T, X, Y>
             ( s =>
                   p.Get(i.There(s))
                   .Cata(b => Or.Left<T, X>(i.Back(b)), Or.Right<T, X>)
@@ -63,10 +83,10 @@ namespace Sharper.C.Control.Optics
             );
 
         public static Prism<S, X> Then<S, A, X>
-          ( Iso<S, A> i
+          ( this Iso<S, A> i
           , Prism<A, X> p
           )
-        =>  Prism.Mk<S, X>
+        =>  Mk<S, X>
             ( s =>
                   p.Get(i.There(s))
                   .Cata(b => Or.Left<S, X>(i.Back(b)), Or.Right<S, X>)

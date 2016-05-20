@@ -18,6 +18,18 @@ namespace Sharper.C.Control.Optics
 
     public static class Iso
     {
+        public static Func<S, T> Back<S, T, A, B>
+          ( this Iso<S, T, A, B> i
+          , Func<A, B> f
+          )
+        =>  s => i.Back(f(i.There(s)));
+
+        public static Func<B, A> Back<S, T, A, B>
+          ( this Iso<S, T, A, B> i
+          , Func<T, S> f
+          )
+        =>  b => i.There(f(i.Back(b)));
+
         public static Iso<S, T, A, B> Mk<S, T, A, B>
           ( Func<S, A> there
           , Func<B, T> back
