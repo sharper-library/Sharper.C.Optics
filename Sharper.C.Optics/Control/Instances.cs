@@ -6,10 +6,10 @@ namespace Sharper.C.Control.Optics
     public static class Instances
     {
         public static Lens<A, A> IdentityLens<A>()
-        =>  Lens.Mk<A, A>(a => a, f => a => f(a));
+        =>  Lens.Mk_<A, A>(a => a, f => a => f(a));
 
         public static Iso<A, A> IdentityIso<A>()
-        =>  Iso.Mk<A, A>(a => a, a => a);
+        =>  Iso.Mk_<A, A>(a => a, a => a);
 
         public static Prism<Maybe<A>, Maybe<B>, A, B> _Just<A, B>()
         =>  Prism.Mk<Maybe<A>, Maybe<B>, A, B>
@@ -22,8 +22,8 @@ namespace Sharper.C.Control.Optics
             , f => s => s.Map(f)
             );
 
-        public static Prism<Maybe<A>, Maybe<A>, Unit, Unit> _Nothing<A>()
-        =>  Prism.Mk<Maybe<A>, Maybe<A>, Unit, Unit>
+        public static Prism<Maybe<A>, Unit> _Nothing<A>()
+        =>  Prism.Mk_<Maybe<A>, Unit>
             ( ma =>
                   ma.Cata
                     ( () => Or.Right<Maybe<A>, Unit>(UNIT)

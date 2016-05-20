@@ -12,7 +12,7 @@ namespace Sharper.C.Control.Optics
         public static Getter<S, A> Mk<S, A>(Func<S, A> view)
         => new AGetter<S, A>(view);
 
-        public static Getter<S, X> Then<S, A, X>
+        public static Getter<S, X> CompGG<S, A, X>
           ( this Getter<S, A> g0
           , Getter<A, X> g1
           )

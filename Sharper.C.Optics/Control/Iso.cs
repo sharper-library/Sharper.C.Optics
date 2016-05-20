@@ -18,13 +18,13 @@ namespace Sharper.C.Control.Optics
 
     public static class Iso
     {
-        public static Func<S, T> Back<S, T, A, B>
+        public static Func<S, T> SwapThere<S, T, A, B>
           ( this Iso<S, T, A, B> i
           , Func<A, B> f
           )
         =>  s => i.Back(f(i.There(s)));
 
-        public static Func<B, A> Back<S, T, A, B>
+        public static Func<B, A> SwapBack<S, T, A, B>
           ( this Iso<S, T, A, B> i
           , Func<T, S> f
           )
@@ -36,7 +36,7 @@ namespace Sharper.C.Control.Optics
           )
         =>  new AnIso<S, T, A, B>(there, back);
 
-        public static Iso<S, A> Mk<S, A>(Func<S, A> there, Func<A, S> back)
+        public static Iso<S, A> Mk_<S, A>(Func<S, A> there, Func<A, S> back)
         =>  new AnIso<S, A>(there, back);
 
         private struct AnIso<S, T, A, B>

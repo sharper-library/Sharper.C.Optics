@@ -18,7 +18,10 @@ namespace Sharper.C.Control.Optics
 
     public static class Prism
     {
-        public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
+        public static Prism<S, A> ToSimple<S, A>(this Prism<S, S, A, A> p)
+        =>  Mk_<S, A>(p.Get, p.Re.View, p.Update);
+
+        public static Prism<S, T, X, Y> CompPP<S, T, A, B, X, Y>
           ( this Prism<S, T, A, B> p0
           , Prism<A, B, X, Y> p1
           )
@@ -34,23 +37,13 @@ namespace Sharper.C.Control.Optics
               , f => p0.Update(p1.Update(f))
               );
 
-        public static Prism<S, X> Then<S, A, X>
+        public static Prism<S, X> CompPP_<S, A, X>
           ( this Prism<S, A> p0
           , Prism<A, X> p1
           )
-        =>  new APrism<S, X>
-              ( s =>
-                    p0.Get(s)
-                    .FlatMap(a => p1.Get(a)
-                    .Cata
-                      ( b => Or.Left<S, X>(p0.Re.View(b))
-                      , x => Or.Right<S, X>(x))
-                      )
-              , y => p0.Re.View(p1.Re.View(y))
-              , f => p0.Update(p1.Update(f))
-              );
+        =>  p0.CompPP(p1).ToSimple();
 
-        public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
+        public static Prism<S, T, X, Y> CompPI<S, T, A, B, X, Y>
           ( this Prism<S, T, A, B> p
           , Iso<A, B, X, Y> i
           )
@@ -60,17 +53,13 @@ namespace Sharper.C.Control.Optics
             , xy => p.Update(a => i.Back(xy(i.There(a))))
             );
 
-        public static Prism<S, X> Then<S, A, X>
+        public static Prism<S, X> CompPI_<S, A, X>
           ( this Prism<S, A> p
           , Iso<A, X> i
           )
-        =>  Mk<S, X>
-            ( s => p.Get(s).Map(i.There)
-            , y => p.Re.View(i.Back(y))
-            , xy => p.Update(a => i.Back(xy(i.There(a))))
-            );
+        =>  p.CompPI(i).ToSimple();
 
-        public static Prism<S, T, X, Y> Then<S, T, A, B, X, Y>
+        public static Prism<S, T, X, Y> CompIP<S, T, A, B, X, Y>
           ( this Iso<S, T, A, B> i
           , Prism<A, B, X, Y> p
           )
@@ -82,51 +71,37 @@ namespace Sharper.C.Control.Optics
             , f => s => i.Back(p.Update(f)(i.There(s)))
             );
 
-        public static Prism<S, X> Then<S, A, X>
+        public static Prism<S, X> CompIP_<S, A, X>
           ( this Iso<S, A> i
           , Prism<A, X> p
           )
-        =>  Mk<S, X>
-            ( s =>
-                  p.Get(i.There(s))
-                  .Cata(b => Or.Left<S, X>(i.Back(b)), Or.Right<S, X>)
-            , y => i.Back(p.Re.View(y))
-            , f => s => i.Back(p.Update(f)(i.There(s)))
-            );
+        =>  i.CompIP(p).ToSimple();
 
         public static Prism<And<E, S>, And<E, T>, And<E, A>, And<E, B>>
         Aside<S, T, A, B, E>
           ( this Prism<S, T, A, B> p
           )
         =>  Mk<And<E, S>, And<E, T>, And<E, A>, And<E, B>>
-              ( es =>
-                    es.Args
-                      ( (e, s) =>
-                            p.Get(s).Cata
-                              ( t => Or.Left<And<E, T>, And<E, A>>(And.Mk(e, t))
-                              , a => Or.Right<And<E, T>, And<E, A>>(And.Mk(e, a))
-                              )
-                      )
+              ( es => es.Args
+                  ( (e, s) =>
+                        p.Get(s).Cata
+                          ( t => Or.Left<And<E, T>, And<E, A>>(And.Mk(e, t))
+                          , a => Or.Right<And<E, T>, And<E, A>>(And.Mk(e, a))
+                          )
+                  )
               , eb => eb.MapSnd(p.Re.View)
-              , f => es => And.Mk(es.Fst, p.Update(a => f(And.Mk(es.Fst, a)).Snd)(es.Snd))
+              , f => es =>
+                    And.Mk
+                      ( es.Fst
+                      , p.Update(a => f(And.Mk(es.Fst, a)).Snd)(es.Snd)
+                      )
               );
 
         public static Prism<And<E, S>, And<E, A>>
-        Aside<S, A, E>
+        Aside_<S, A, E>
           ( this Prism<S, A> p
           )
-        =>  Mk<And<E, S>, And<E, A>>
-              ( es =>
-                    es.Args
-                      ( (e, s) =>
-                            p.Get(s).Cata
-                              ( t => Or.Left<And<E, S>, And<E, A>>(And.Mk(e, t))
-                              , a => Or.Right<And<E, S>, And<E, A>>(And.Mk(e, a))
-                              )
-                      )
-              , eb => eb.MapSnd(p.Re.View)
-              , f => es => And.Mk(es.Fst, p.Update(a => f(And.Mk(es.Fst, a)).Snd)(es.Snd))
-              );
+        =>  Aside<S, S, A, A, E>(p).ToSimple();
 
         public static Prism<S, T, A, B> Mk<S, T, A, B>
         ( Func<S, Or<T, A>> get
@@ -135,7 +110,7 @@ namespace Sharper.C.Control.Optics
         )
         =>  new APrism<S, T, A, B>(get, review, update);
 
-        public static Prism<S, A> Mk<S, A>
+        public static Prism<S, A> Mk_<S, A>
         ( Func<S, Or<S, A>> get
         , Func<A, S> review
         , Func<Func<A, A>, Func<S, S>> update

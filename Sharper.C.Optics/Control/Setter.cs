@@ -14,24 +14,36 @@ namespace Sharper.C.Control.Optics
 
     public static class Setter
     {
-        public static Func<S, T> Set<S, T, A, B>(this Setter<S, T, A, B> x, B b)
+        public static Setter<S, A> ToSimple<S, A>(this Setter<S, S, A, A> s)
+        =>  Mk_<S, A>(s.Update);
+
+        public static Func<S, T> Set<S, T, A, B>
+          ( this Setter<S, T, A, B> x
+          , B b
+          )
         =>  x.Update(_ => b);
 
         public static Func<S, S> Set<S, A>(this Setter<S, A> x, A a)
         =>  x.Update(_ => a);
 
-        public static Setter<S, T, X, Y> Then<S, T, A, B, X, Y>
+        public static Setter<S, T, X, Y> CompSS<S, T, A, B, X, Y>
         ( this Setter<S, T, A, B> s0
         , Setter<A, B, X, Y> s1
         )
-        =>  new ASetter<S, T, X, Y>(f => s0.Update(s1.Update(f)));
+        =>  Mk<S, T, X, Y>(f => s0.Update(s1.Update(f)));
+
+        public static Setter<S, X> CompSS_<S, A, X>
+        ( this Setter<S, A> s0
+        , Setter<A, X> s1
+        )
+        =>  s0.CompSS(s1).ToSimple();
 
         public static Setter<S, T, A, B> Mk<S, T, A, B>
           ( Func<Func<A, B>, Func<S, T>> update
           )
         => new ASetter<S, T, A, B>(update);
 
-        public static Setter<S, A> Mk<S, A>
+        public static Setter<S, A> Mk_<S, A>
           ( Func<Func<A, A>, Func<S, S>> update
           )
         => new ASetter<S, A>(update);
