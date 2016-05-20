@@ -56,6 +56,12 @@ namespace Sharper.C.Control.Optics
             , f => eax => eax.Map(f)
             );
 
+        public static Prism<A, A> PrismFilter<A>(Func<A, bool> f)
+        =>  Prism.Mk_<A, A>
+              ( a => f(a) ? Or.Right<A, A>(a) : Or.Left<A, A>(a)
+              , a => a
+              );
+
         public static Iso<Maybe<A>, Maybe<B>, Or<E, A>, Or<E, B>>
         IsoMaybeSum<A, B, E>(Func<E> e)
         =>  Iso.Mk<Maybe<A>, Maybe<B>, Or<E, A>, Or<E, B>>
