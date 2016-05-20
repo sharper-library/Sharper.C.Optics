@@ -66,5 +66,25 @@ namespace Sharper.C.Control.Optics
         public static Iso<Or<E, A>, Or<E, B>, Maybe<A>, Maybe<B>>
         IsoSumMaybe<A, B, E>(Func<E> e)
         =>  IsoMaybeSum<B, A, E>(e).From;
+
+        public static Iso<And<A, B>, And<C, D>, And<B, A>, And<D, C>>
+        IsoProductSwap<A, B, C, D>()
+        =>  Iso.Mk<And<A, B>, And<C, D>, And<B, A>, And<D, C>>
+              ( x => x.Swap
+              , x => x.Swap
+              );
+
+        public static Iso<And<A, B>, And<B, A>> IsoProductSwap_<A, B>()
+        =>  IsoProductSwap<A, B, A, B>().ToSimple();
+
+        public static Iso<Or<A, B>, Or<C, D>, Or<B, A>, Or<D, C>>
+        IsoSumSwap<A, B, C, D>()
+        =>  Iso.Mk<Or<A, B>, Or<C, D>, Or<B, A>, Or<D, C>>
+              ( x => x.Swap
+              , x => x.Swap
+              );
+
+        public static Iso<Or<A, B>, Or<B, A>> IsoSumSwap_<A, B>()
+        =>  IsoSumSwap<A, B, A, B>().ToSimple();
     }
 }

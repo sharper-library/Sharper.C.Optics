@@ -31,7 +31,7 @@
           "lib/dotnet/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
@@ -43,9 +43,10 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027",
           "System.Linq": "4.0.0",
           "System.Runtime": "4.0.20"
@@ -232,7 +233,7 @@
           "lib/dnx451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -247,9 +248,10 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -326,7 +328,7 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -341,9 +343,10 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -414,7 +417,7 @@
           "lib/dotnet/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
@@ -426,9 +429,10 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027",
           "System.Linq": "4.0.0",
           "System.Runtime": "4.0.20"
@@ -609,7 +613,7 @@
           "lib/dotnet/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
@@ -621,9 +625,10 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027",
           "System.Linq": "4.0.0",
           "System.Runtime": "4.0.20"
@@ -810,7 +815,7 @@
           "lib/dnx451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -825,9 +830,10 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -904,7 +910,7 @@
           "lib/dnx451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -919,9 +925,10 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -998,7 +1005,7 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -1013,9 +1020,10 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -1092,7 +1100,7 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
-      "Sharper.C.Product/0.1.0-build-00002": {
+      "Sharper.C.Product/0.1.0-master-00003": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -1107,9 +1115,10 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00002": {
+      "Sharper.C.Sum/0.1.0-master-00003": {
         "type": "package",
         "dependencies": {
+          "Sharper.C.Maybe": "0.1.0-master-00005",
           "System.Collections.Immutable": "1.2.0-rc2-24027"
         },
         "frameworkAssemblies": [
@@ -1183,9 +1192,9 @@
         "Sharper.C.Maybe.nuspec"
       ]
     },
-    "Sharper.C.Product/0.1.0-build-00002": {
+    "Sharper.C.Product/0.1.0-master-00003": {
       "type": "package",
-      "sha512": "+uaDD28PgVUU5QrulhMcxMUX98RbcJeKFB59xEU/1px3o3kiJ5VOIMg0VKfRWAuPuDYYjpjJnOMAq4eF56w0Iw==",
+      "sha512": "XYFPb/NBv1yX2/YUrLn2zTZIWk31qCpHpPSDlcsJfMprLEnNFBXxVHSM5D5WPC0gOoTrg+DbQ8XV6jH2fLiJyA==",
       "files": [
         "lib/dnx451/Sharper.C.Product.dll",
         "lib/dnx451/Sharper.C.Product.xml",
@@ -1193,14 +1202,14 @@
         "lib/dotnet/Sharper.C.Product.xml",
         "lib/net451/Sharper.C.Product.dll",
         "lib/net451/Sharper.C.Product.xml",
-        "Sharper.C.Product.0.1.0-build-00002.nupkg",
-        "Sharper.C.Product.0.1.0-build-00002.nupkg.sha512",
+        "Sharper.C.Product.0.1.0-master-00003.nupkg",
+        "Sharper.C.Product.0.1.0-master-00003.nupkg.sha512",
         "Sharper.C.Product.nuspec"
       ]
     },
-    "Sharper.C.Sum/0.1.0-master-00002": {
+    "Sharper.C.Sum/0.1.0-master-00003": {
       "type": "package",
-      "sha512": "LIj24K/VTSgtSiRf+g6ng+U3fiQ0QYyWbtQ1iNtfUgSzfESRSWpXwXbtAtadrt5G3yJcsxli8A72RrCzEJvsBg==",
+      "sha512": "vHlVVy/InAyrOeYSeEajoIEV4nJw0u6JHf0C4g2MThK8drvdyehyEIyzZ2BQiY/A5LlNxwpCfftkt1NAt65A1g==",
       "files": [
         "lib/dnx451/Sharper.C.Sum.dll",
         "lib/dnx451/Sharper.C.Sum.xml",
@@ -1208,8 +1217,8 @@
         "lib/dotnet/Sharper.C.Sum.xml",
         "lib/net451/Sharper.C.Sum.dll",
         "lib/net451/Sharper.C.Sum.xml",
-        "Sharper.C.Sum.0.1.0-master-00002.nupkg",
-        "Sharper.C.Sum.0.1.0-master-00002.nupkg.sha512",
+        "Sharper.C.Sum.0.1.0-master-00003.nupkg",
+        "Sharper.C.Sum.0.1.0-master-00003.nupkg.sha512",
         "Sharper.C.Sum.nuspec"
       ]
     },

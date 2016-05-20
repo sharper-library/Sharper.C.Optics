@@ -18,6 +18,9 @@ namespace Sharper.C.Control.Optics
 
     public static class Iso
     {
+        public static Iso<S, A> ToSimple<S, A>(this Iso<S, S, A, A> i)
+        => Mk_<S, A>(i.There, i.Back);
+
         public static Func<S, T> SwapThere<S, T, A, B>
           ( this Iso<S, T, A, B> i
           , Func<A, B> f
