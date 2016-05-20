@@ -1,4 +1,5 @@
 ﻿using System;
+using Sharper.C.Data;
 
 namespace Sharper.C.Control.Optics
 {
@@ -20,6 +21,17 @@ namespace Sharper.C.Control.Optics
     {
         public static Iso<S, A> ToSimple<S, A>(this Iso<S, S, A, A> i)
         => Mk_<S, A>(i.There, i.Back);
+
+        public static Prism<S, T, A, B> ToPrism<S, T, A, B>
+          ( this Iso<S, T, A, B> i
+          )
+        =>  Prism.Mk<S, T, A, B>
+              ( s => Or.Right<T, A>(i.There(s))
+              , i.Back
+              );
+
+        public static Prism<S, A> ToPrism_<S, A>(this Iso<S, A> i)
+        =>  ToPrism(i).ToSimple();
 
         public static Func<S, T> SwapThere<S, T, A, B>
           ( this Iso<S, T, A, B> i
