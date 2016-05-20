@@ -7,6 +7,7 @@
 , "dependencies":
   { "Sharper.C.Maybe": "0.1.0-master-*"
   , "Sharper.C.Sum": "0.1.0-master-*"
+  , "Sharper.C.Product": "0.1.0-*"
   , "Sharper.C.Unit": "0.1.0-*"
   }
 

@@ -31,6 +31,18 @@
           "lib/dotnet/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -220,6 +232,21 @@
           "lib/dnx451/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -299,6 +326,21 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -370,6 +412,18 @@
         },
         "runtime": {
           "lib/dotnet/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
       "Sharper.C.Sum/0.1.0-master-00002": {
@@ -553,6 +607,18 @@
         },
         "runtime": {
           "lib/dotnet/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
       "Sharper.C.Sum/0.1.0-master-00002": {
@@ -744,6 +810,21 @@
           "lib/dnx451/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -821,6 +902,21 @@
         },
         "runtime": {
           "lib/dnx451/Sharper.C.Maybe.dll": {}
+        }
+      },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
       "Sharper.C.Sum/0.1.0-master-00002": {
@@ -902,6 +998,21 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -981,6 +1092,21 @@
           "lib/net451/Sharper.C.Maybe.dll": {}
         }
       },
+      "Sharper.C.Product/0.1.0-build-00002": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Sharper.C.Product.dll": {}
+        }
+      },
       "Sharper.C.Sum/0.1.0-master-00002": {
         "type": "package",
         "dependencies": {
@@ -1055,6 +1181,21 @@
         "Sharper.C.Maybe.0.1.0-master-00005.nupkg",
         "Sharper.C.Maybe.0.1.0-master-00005.nupkg.sha512",
         "Sharper.C.Maybe.nuspec"
+      ]
+    },
+    "Sharper.C.Product/0.1.0-build-00002": {
+      "type": "package",
+      "sha512": "+uaDD28PgVUU5QrulhMcxMUX98RbcJeKFB59xEU/1px3o3kiJ5VOIMg0VKfRWAuPuDYYjpjJnOMAq4eF56w0Iw==",
+      "files": [
+        "lib/dnx451/Sharper.C.Product.dll",
+        "lib/dnx451/Sharper.C.Product.xml",
+        "lib/dotnet/Sharper.C.Product.dll",
+        "lib/dotnet/Sharper.C.Product.xml",
+        "lib/net451/Sharper.C.Product.dll",
+        "lib/net451/Sharper.C.Product.xml",
+        "Sharper.C.Product.0.1.0-build-00002.nupkg",
+        "Sharper.C.Product.0.1.0-build-00002.nupkg.sha512",
+        "Sharper.C.Product.nuspec"
       ]
     },
     "Sharper.C.Sum/0.1.0-master-00002": {
@@ -1584,6 +1725,7 @@
     "": [
       "Sharper.C.Maybe >= 0.1.0-master-*",
       "Sharper.C.Sum >= 0.1.0-master-*",
+      "Sharper.C.Product >= 0.1.0-*",
       "Sharper.C.Unit >= 0.1.0-*"
     ],
     ".NETPlatform,Version=v5.0": [
