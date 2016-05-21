@@ -43,7 +43,7 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -248,7 +248,7 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -343,7 +343,7 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -429,7 +429,7 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -625,7 +625,7 @@
           "lib/dotnet/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -830,7 +830,7 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -925,7 +925,7 @@
           "lib/dnx451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -1020,7 +1020,7 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -1115,7 +1115,7 @@
           "lib/net451/Sharper.C.Product.dll": {}
         }
       },
-      "Sharper.C.Sum/0.1.0-master-00003": {
+      "Sharper.C.Sum/0.1.0-master-00004": {
         "type": "package",
         "dependencies": {
           "Sharper.C.Maybe": "0.1.0-master-00005",
@@ -1207,9 +1207,9 @@
         "Sharper.C.Product.nuspec"
       ]
     },
-    "Sharper.C.Sum/0.1.0-master-00003": {
+    "Sharper.C.Sum/0.1.0-master-00004": {
       "type": "package",
-      "sha512": "vHlVVy/InAyrOeYSeEajoIEV4nJw0u6JHf0C4g2MThK8drvdyehyEIyzZ2BQiY/A5LlNxwpCfftkt1NAt65A1g==",
+      "sha512": "SHCeWh3dINn+KM/igUCXULxOSRAIZIlYBgfDT58J9pXnpgq/32fmZxJ7uqNJ3W6AF7+VoG0H1+HVFQ5invyiKg==",
       "files": [
         "lib/dnx451/Sharper.C.Sum.dll",
         "lib/dnx451/Sharper.C.Sum.xml",
@@ -1217,8 +1217,8 @@
         "lib/dotnet/Sharper.C.Sum.xml",
         "lib/net451/Sharper.C.Sum.dll",
         "lib/net451/Sharper.C.Sum.xml",
-        "Sharper.C.Sum.0.1.0-master-00003.nupkg",
-        "Sharper.C.Sum.0.1.0-master-00003.nupkg.sha512",
+        "Sharper.C.Sum.0.1.0-master-00004.nupkg",
+        "Sharper.C.Sum.0.1.0-master-00004.nupkg.sha512",
         "Sharper.C.Sum.nuspec"
       ]
     },
