@@ -125,6 +125,17 @@ namespace Sharper.C.Control.Optics
             , update ?? DefaultUpdate(get, review)
             );
 
+        public static Prism<S, A> Mk_<S, A>
+        ( Func<S, Maybe<A>> get
+        , Func<A, S> review
+        , Func<Func<A, A>, Func<S, S>> update = null
+        )
+        =>  Mk_
+            ( s => Or.FromMaybe(() => s, get(s))
+            , review
+            , update
+            );
+
         private static Func<Func<A, B>, Func<S, T>> DefaultUpdate<S, T, A, B>
           ( Func<S, Or<T, A>> get
           , Func<B, T> review
