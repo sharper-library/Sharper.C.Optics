@@ -1,27 +1,24 @@
-{ "version": "0.1.0-*"
-, "description": "Lenses and Prisms"
-, "authors": ["Jeremy Hughes <jeremy@tflite.com>"]
-, "projectUrl": "https://github.com/sharper-library/Sharper.C.Optics"
-, "licenseUrl": "https://raw.githubusercontent.com/sharper-library/Sharper.C.Optics/master/LICENSE.txt"
-
-, "dependencies":
-  { "Sharper.C.Maybe": "0.1.0-master-*"
-  , "Sharper.C.Sum": "0.1.0-master-*"
-  , "Sharper.C.Product": "0.1.0-*"
-  , "Sharper.C.Unit": "0.1.0-*"
-  }
-
-, "frameworks":
-  { "dotnet":
-    { "dependencies":
-      { "System.Runtime": "4.0.20"
-      }
+{
+    "version": "1.0-*",
+    "description": "Lenses and Prisms",
+    "authors": [
+        "Jeremy Hughes <jedahu@gmail.com>"
+    ],
+    "packOptions": {
+        "projectUrl": "https://github.com/sharper-library/Sharper.C.Optics",
+        "licenseUrl": "https://raw.githubusercontent.com/sharper-library/Sharper.C.Optics/master/LICENSE.txt"
+    },
+    "dependencies": {
+        "Sharper.C.Maybe": "1.*",
+        "Sharper.C.Sum": "1.*",
+        "Sharper.C.Unit": "1.*",
+        "Sharper.C.Product": "1.*"
+    },
+    "frameworks": {
+        "netstandard1.3": {
+            "dependencies": {
+                "NETStandard.Library": "1.5.0-rc2-*"
+            }
+        }
     }
-  , "dnx451":
-    {
-    }
-  , "net451":
-    {
-    }
-  }
 }

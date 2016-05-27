@@ -1,6 +1,6 @@
 ﻿using System;
 using Sharper.C.Data;
-using static Sharper.C.Data.UnitModule;
+using static Sharper.C.Data.Unit;
 
 namespace Sharper.C.Control.Optics
 {
